@@ -8,7 +8,7 @@ import sys
 
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
-chrome_path = "/Users/ethanbrimhall/Documents/chromedriver"
+chrome_path = ""
 
 driver = webdriver.Chrome(chrome_path, options=options)
 
@@ -43,6 +43,7 @@ print(words)
 
 inputField = driver.find_element_by_xpath("""//*[@id="gwt-uid-15"]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/input""")
 
+#Sleeps because the game can detect cheaters if the sleep is not used...Slows down the WPM slightly
 for character in words:
 	inputField.send_keys(character)
 	sleep(0.01)
